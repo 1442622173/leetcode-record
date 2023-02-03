@@ -69,3 +69,22 @@ var btreeGameWinningMove = function (root, n, x) {
     return remain >= Math.floor((n + 1) / 2);
 }
 console.log(btreeGameWinningMove(tree, 9, 8));
+//ÎÒµÄ´úÂë
+var btreeGameWinningMove = function (root, n, x) {
+    function nodesum(root) {
+        if (!root) return 0
+        return 1 + nodesum(root.left) + nodesum(root.right)
+    }
+    function findnode(root, x) {
+        if (!root) return
+        if (root.val == x) return root
+        findnode(root.left, x)
+        findnode(root.right, x)
+    }
+    let node = findnode(root, x)
+    let sumr = nodesum(node.right)
+    let suml = nodesum(node.left)
+    let other = n - 1 - sumr - suml
+    let max = Math.max
+    return max > n - max
+};
