@@ -29,6 +29,7 @@ function findMedianSortedArrays(nums1, nums2) {
             end = long[long.length - 1]
             continue
         }
+        //二分，寻找在long中的位置
         while (end - start > 1) {
             if (long[parseInt((end + start) / 2)] > temp) {
                 end = parseInt((end + start) / 2)
