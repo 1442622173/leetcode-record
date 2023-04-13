@@ -1,2 +1,3 @@
 # leetcode-record
-记录刷的leetcode
+
+力扣记录
